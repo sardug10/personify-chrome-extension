@@ -1,0 +1,361 @@
+/*
+BASIC CONFIGURATIONS
+*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  --body-bg: #121936;
+  --heading-color: #42b6df;
+  --text-color: #5260ab;
+  --text-color-2: #f7f7f7;
+}
+
+html[data-theme="light"] {
+  --body-bg: #f7f7f7;
+  --heading-color: #03103a;
+  --text-color: #0118a0;
+  --text-color-2: #000000;
+}
+
+body {
+  height: 100vh;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: var(--body-bg);
+  font-family: "Lato", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+}
+
+/*
+CENTER MESSAGE STYLING
+*/
+.greet {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.greet__time {
+  text-align: center;
+  margin-bottom: 1.2rem;
+}
+
+.greet__hour {
+  font-size: 15rem;
+  font-weight: 300;
+  background: -webkit-gradient(linear, left top, right top, from(var(--heading-color)), to(var(--text-color)));
+  background: linear-gradient(to right, var(--heading-color), var(--text-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 1rem var(--heading-color), 0 0 2rem var(--heading-color);
+}
+
+.greet__ap {
+  font-size: 2rem;
+  color: var(--heading-color);
+}
+
+.greet__salutation {
+  font-size: 4rem;
+  text-transform: capitalize;
+  background: -webkit-gradient(linear, left top, right top, from(var(--heading-color)), to(var(--text-color)));
+  background: linear-gradient(to right, var(--heading-color), var(--text-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-align: center;
+}
+
+.greet__quote {
+  margin-top: 2rem;
+  font-family: "Dancing Script", cursive;
+  color: var(--text-color-2);
+  word-spacing: 0.5rem;
+  letter-spacing: 0.2rem;
+}
+
+.greet__quote--text {
+  font-size: 2rem;
+  display: block;
+}
+
+.greet__quote--author {
+  margin-left: 70%;
+  font-size: 1.8rem;
+}
+
+/*
+TOGGLE BUTTON STYLING
+*/
+.toggle-container {
+  position: absolute;
+  top: 1.2rem;
+  left: 1.2rem;
+}
+
+input[type="checkbox"] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 52px;
+  height: 27px;
+  background: grey;
+  float: right;
+  border-radius: 100px;
+  position: relative;
+}
+
+label:hover {
+  -webkit-box-shadow: 0 0 1rem var(--text-color), 0 0 1.5rem var(--text-color), 0 0 3rem var(--text-color);
+          box-shadow: 0 0 1rem var(--text-color), 0 0 1.5rem var(--text-color), 0 0 3rem var(--text-color);
+}
+
+label:after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 90px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+input:checked + label {
+  background: var(--heading-color);
+}
+
+input:checked + label:after {
+  left: calc(100% - 5px);
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+label:active:after {
+  width: 45px;
+}
+
+/*
+TODO
+*/
+.todo {
+  position: absolute;
+  bottom: 4rem;
+  right: 1.5rem;
+}
+
+.todo__btn {
+  position: absolute;
+  bottom: 2rem;
+  right: 3.5rem;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  padding: 0.5rem;
+  font-size: 1.6rem;
+  color: var(--heading-color);
+}
+
+.todo__btn:hover {
+  text-shadow: 0 0 1rem var(--heading-color);
+}
+
+.todo__btn:focus {
+  outline: none;
+}
+
+.todo__div {
+  display: none;
+  margin-bottom: 2.5rem;
+  color: var(--text-color-2);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1.5rem 2rem;
+  text-align: center;
+}
+
+.todo .display__div {
+  display: block;
+}
+
+.todo__input {
+  display: block;
+  margin-bottom: 1rem;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--heading-color);
+  color: var(--text-color-2);
+}
+
+.todo__input:focus {
+  outline: none;
+}
+
+.todo__add-more {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 1.6rem;
+  padding: 2px 0.5rem;
+  margin-bottom: 1.2rem;
+  background: transparent;
+  border: none;
+  color: var(--text-color);
+}
+
+.todo__add-more:hover {
+  border-bottom: 1px solid var(--text-color-2);
+}
+
+.todo__list {
+  list-style: none;
+  font-size: 1.4rem;
+}
+
+.todo__item {
+  padding: 2px 5px;
+}
+
+.todo__item:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.todo__item--checked {
+  background-color: rgba(247, 247, 247, 0.5);
+}
+
+.todo__icons {
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  margin-left: 0.5rem;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.todo__item:hover .todo__icons {
+  opacity: 1;
+  visibility: visible;
+}
+
+/*
+SETTINGS
+*/
+.settings {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 2.5rem;
+}
+
+.settings .display__div {
+  display: block;
+}
+
+.settings__div {
+  margin-bottom: 1.5rem;
+  display: none;
+}
+
+.settings .name__form {
+  margin-bottom: 1.5rem;
+}
+
+.settings__input {
+  display: inline-block;
+  margin-bottom: 1rem;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--heading-color);
+  color: var(--text-color-2);
+}
+
+.settings__input:focus {
+  outline: none;
+}
+
+.settings__icon {
+  font-size: 3.5rem;
+  color: var(--heading-color);
+  border-radius: 50rem;
+  cursor: pointer;
+}
+
+.settings__icon:hover {
+  -webkit-box-shadow: 0 0 1rem var(--heading-color), 0 0 2rem var(--heading-color), 0 0 4rem var(--heading-color);
+          box-shadow: 0 0 1rem var(--heading-color), 0 0 2rem var(--heading-color), 0 0 4rem var(--heading-color);
+}
+
+/*
+LINKS
+*/
+.links {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+
+.links__icon {
+  font-size: 3.5rem;
+  color: var(--text-color);
+}
+
+.links__icon:hover {
+  -webkit-box-shadow: 0 0 1rem var(--text-color), 0 0 2rem var(--text-color), 0 0 4rem var(--text-color);
+          box-shadow: 0 0 1rem var(--text-color), 0 0 2rem var(--text-color), 0 0 4rem var(--text-color);
+}
+
+.links a {
+  text-decoration: none;
+}
+
+.links a:not(:last-child) {
+  margin-right: 1.5rem;
+}
+
+/*
+WEATHER
+*/
+.weather {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  color: var(--text-color-2);
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.weather__city {
+  display: block;
+  margin-bottom: 0.7rem;
+  font-size: 1.8rem;
+}
+
+.weather__temp {
+  display: block;
+  font-size: 1.6rem;
+  margin-bottom: 0.7rem;
+}
+
+.weather__description {
+  display: block;
+  font-size: 1.6rem;
+}
+/*# sourceMappingURL=style.css.map */
