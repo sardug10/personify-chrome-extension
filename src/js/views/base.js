@@ -1,0 +1,16 @@
+export const elements = {
+  settingsIcon: document.querySelector(".settings__icon"),
+  settingsDiv: document.querySelector(".settings__div"),
+  todoBtn: document.querySelector(".todo__btn"),
+  todoDiv: document.querySelector(".todo__div"),
+  locationForm: document.querySelector(".location__form"),
+  locationInput: document.querySelector(".location__input"),
+  weatherDiv: document.querySelector(".weather"),
+  todoForm: document.querySelector(".todo__form"),
+  todoInput: document.querySelector(".todo__input"),
+  todoList: document.querySelector(".todo__list"),
+  nameForm: document.querySelector(".name__form"),
+  nameInput: document.querySelector(".name__input"),
+  timeField: document.querySelector(".greet__time"),
+  quoteDiv: document.querySelector(".greet__quote"),
+};
