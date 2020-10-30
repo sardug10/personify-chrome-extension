@@ -7,11 +7,11 @@ This is a **Chrome Extension** which overrides chrome's new tab and have followi
 #### Instructions to use
 1) Download the **css & js folder**, index.html, sarthakIcon.png and manifest.json file and place it in a folder and name it anything. The folder structure should look like this.
     Extension Folder :-
-        > css (folder)
-        > js (folder)
-        > index.html (file)
-        > manifest.json (file)
-        > sarthakIcon.png (png image)
+        1) css (folder)
+        2) js (folder)
+        3) index.html (file)
+        4) manifest.json (file)
+        5) sarthakIcon.png (png image)
 
     ##### Note: Don't forget to put manifest.json file otherwise chrome won't read that folder as an extension.
 
